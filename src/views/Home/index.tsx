@@ -1,9 +1,13 @@
-import Page from "@components/Page";
+
+import { useGetBmiQuery } from "@store/Services/UsersBMI";
+
+import HomeUX from "./HomeUX";
 const Home = () => {
+  const {data,isLoading,error} = useGetBmiQuery({} ,  {refetchOnMountOrArgChange: true, refetchOnFocus: true});
   return (
-    <Page pageTitle="Home">
-      <h1>Hola Mundo</h1>
-    </Page>
+  <HomeUX
+  data={data} error={error}
+  />
   );
-}
+};
 export default Home;

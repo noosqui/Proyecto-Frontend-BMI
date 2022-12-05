@@ -14,6 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleClick = async () => {
+
     const  data = await login({ email, password }).unwrap();
     console.log(data);
     dispatch(setSecData(data));
