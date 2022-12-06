@@ -17,19 +17,13 @@
 }
 
 .content {
-  background-color: rgb(64, 97, 39);
+  background-color: #fff;
   padding: 1rem;
   min-height: 100vh;
 }
 
 .withNavBar .content {
-<<<<<<< HEAD
-  margin-top: 0.1rem;
-  min-height: calc(100vh - 4.2rem);
-}
-=======
-  margin-top:4rem;
-  margin-bottom:10rem;
+  margin-top: 4rem;
+  margin-bottom: 10rem;
   min-height: calc(100vh - 8.2rem);
 }
->>>>>>> dcc8f8c108efc9192ea4f71e87d7ef4dd38444b6

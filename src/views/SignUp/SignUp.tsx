@@ -29,8 +29,10 @@ const LoginUX = (
   return (
     <Page pageTitle="Crear Cuenta" useAbsoluteCenter>
       <section style={{minWidth:"480px", marginTop:"1rem"}}>
-        <div className="form">
-        <Field
+        
+        <main className="form">
+        <div className="formInput">
+        <Input
           name="name"
           labelText="Nombre"
           type="text"
@@ -38,14 +40,14 @@ const LoginUX = (
           onChange={(e) => setName(e.target.value)}
         />
 
-        <Field
+        <Input
           name="email"
           labelText="Email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Field
+        <Input
           name="password"
           labelText="Password"
           type="password"
@@ -76,6 +78,7 @@ const LoginUX = (
               <PrimaryButton onClick={handleClick}>Registrarse</PrimaryButton>
             </ActionField>
           </div>
+        </main>
 
       </section>
     </Page>
