@@ -27,21 +27,7 @@ export interface IUser {
     IMC:string
   }
   
-/*
-export interface INewCashFlow {
-  type: string;
-  date: string;
-  amount: number;
-  description: string;
-}
 
-export interface IGetAllCashFlowResponse {
-  total: number;
-  totalPages: number;
-  page: number;
-  itemsPerPage: number;
-  items: ICashFlow[];
-}*/
 
 export const userApi = createApi({
   reducerPath: "userApi",

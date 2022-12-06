@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useSetBMIMutation} from "@store/Services/UsersBMI";
 
 import { useFetcher } from "react-router-dom";
+import ActionField from "@components/ActionField";
 const HomeUX = (data?:any,error?:any) => {
   /// Variables
   const [newBMI, {  }] = useSetBMIMutation();
@@ -67,15 +68,19 @@ const HomeUX = (data?:any,error?:any) => {
             let toNumber =  Number.parseInt(e.target.value)
             isNaN(toNumber)? setEdad(0):setEdad(Number.parseInt(e.target.value));
         }} />
-        <PrimaryButton className="" onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+
+        <ActionField align="center">
+        <PrimaryButton style={{backgroundColor: "#006400", marginRight:"1rem"}} className="" onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
           handleCalcular()
 
 
         }}>Calcular IMC</PrimaryButton>
-        <Button className="" onClick={(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>
+        <Button style={{backgroundColor: "#4682b4", color: "#FFF"}} className="" onClick={(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>
         {
           setVisibleInfo(!visibleInfo)
         }} >Desplegar Info</Button>
+        </ActionField>
+        
       
       {visibleIMC && <Field labelText="Resultado" name="Resultado" readOnly={true} value={IMC} />}
       
