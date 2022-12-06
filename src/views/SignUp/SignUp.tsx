@@ -1,10 +1,12 @@
 
 import Page from "@components/Page";
-import { Field } from "@components/InputField";
-import { PrimaryButton } from "@components/Buttons";
+import { Field, Input } from "@components/InputField";
+import { PrimaryButton, ButtonRegister } from "@components/Buttons";
 import ActionField from "@components/ActionField";
 import ErrorField from "@components/ErrorField";
 export interface ILoginUXProps {
+  name: string,
+  setName: (name: string) => void;
   email: string;
   setEmail: (email: string) => void;
   password: string;
@@ -14,6 +16,8 @@ export interface ILoginUXProps {
 }
 const LoginUX = (
   {
+    name,
+    setName,
     email,
     setEmail,
     password,
@@ -25,25 +29,55 @@ const LoginUX = (
   return (
     <Page pageTitle="Crear Cuenta" useAbsoluteCenter>
       <section style={{minWidth:"480px", marginTop:"1rem"}}>
-        <Field
-          name="email"
-          labelText="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Field
-          name="password"
-          labelText="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <form action="">
+          <div className="form">
+            <h1 className="h1">Registrarse</h1>
+            <Input
+              name="name"
+              labelText="Nombre"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              name="email"
+              labelText="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input
+              name="password"
+              labelText="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-        {error && <ErrorField>{error?.data?.error}</ErrorField>}
-        <ActionField align="right">
-          <PrimaryButton onClick={handleClick}>Crear Cuenta</PrimaryButton>
-        </ActionField>
+            {/* <Field
+              name="textEmail"
+              labelText="Email"
+              type="email"
+              value={email}
+              id="textEmail"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+      
+            <Field
+              name="textPass"
+              labelText="Password"
+              type="password"
+              value={password}
+              id="textPass"
+              onChange={(e) => setPassword(e.target.value)}
+            /> */}
+          
+            {error && <ErrorField>{error?.data?.error}</ErrorField>}
+            <ActionField align="center">
+              <PrimaryButton onClick={handleClick}>Registrarse</PrimaryButton>
+            </ActionField>
+          </div>
+        </form>
       </section>
     </Page>
   );

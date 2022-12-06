@@ -3,22 +3,26 @@
   color: #333;
   min-height: 100vh;
 }
+
 .absoluteCenter {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.withNavBar{
+
+.withNavBar {
   min-height: calc(100vh - 4.1rem);
 }
+
 .content {
-  background-color:#fff;
-  padding:1rem;
+  background-color: rgb(64, 97, 39);
+  padding: 1rem;
   min-height: 100vh;
 }
+
 .withNavBar .content {
-  margin-top:0.1rem;
+  margin-top: 0.1rem;
   min-height: calc(100vh - 4.2rem);
 }
