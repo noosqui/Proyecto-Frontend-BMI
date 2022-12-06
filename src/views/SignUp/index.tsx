@@ -9,14 +9,17 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleClick = async () => {
-    const  data = await signin({ email, password }).unwrap();
+    const  data = await signin({ name ,email, password }).unwrap();
     console.log(data);
     Navigator("/login");
   }
   return (
     <SignUp
+      name = {name}
+      setName = {setName}
       email={email}
       setEmail={setEmail}
       password={password}

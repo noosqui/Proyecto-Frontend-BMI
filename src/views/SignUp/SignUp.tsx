@@ -5,6 +5,8 @@ import { PrimaryButton } from "@components/Buttons";
 import ActionField from "@components/ActionField";
 import ErrorField from "@components/ErrorField";
 export interface ILoginUXProps {
+  name: string;
+  setName: (name: string) => void;
   email: string;
   setEmail: (email: string) => void;
   password: string;
@@ -14,6 +16,8 @@ export interface ILoginUXProps {
 }
 const LoginUX = (
   {
+    setName,
+    name,
     email,
     setEmail,
     password,
@@ -25,6 +29,14 @@ const LoginUX = (
   return (
     <Page pageTitle="Crear Cuenta" useAbsoluteCenter>
       <section style={{minWidth:"480px", marginTop:"1rem"}}>
+        <Field
+          name="name"
+          labelText="Nombre"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
         <Field
           name="email"
           labelText="Email"
